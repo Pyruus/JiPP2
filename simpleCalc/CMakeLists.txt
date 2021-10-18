@@ -4,6 +4,6 @@ project(simpleCalc)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(simpleCalc src/main.cpp src/calc.cpp)
+add_executable(simpleCalc src/main.cpp src/calc.cpp ../firstLib/include/lib.h)
 
 include_directories(include)
