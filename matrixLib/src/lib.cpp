@@ -188,7 +188,34 @@ double ** powerMatrix(double ** a, int rows, int cols, unsigned int power){
     return result;
 }
 
-//int ** determinantMatrix(int ** a, int rows, int cols);
+int determinantMatrix(int ** a, int rows, int cols){
+    int ** help;
+    help = createMatrix(help, cols, cols);
+    int det = 0;
+    if (rows == 1){
+        return a[0][0];
+    }
+    else if (rows == 2)
+        return ((a[0][0] * a[1][1]) - (a[1][0] * a[0][1]));
+    else {
+        for (int x = 0; x < rows; x++) {
+            int m = 0;
+            for (int i = 1; i < rows; i++) {
+                int n = 0;
+                for (int j = 0; j < rows; j++) {
+                    if (j == x) {
+                        continue;
+                    }
+                    help[m][n] = a[i][j];
+                    n++;
+                }
+                m++;
+            }
+            det = det + (pow(-1, x) * a[0][x] * determinantMatrix(help, rows - 1, cols));
+        }
+        return det;
+    }
+}
 
 bool matrixIsDiagonal(int ** a, int rows, int cols){
     if (rows != cols){
@@ -266,7 +293,28 @@ void deleteMatrix(double ** matrix, int rows){
 }
 
 void help(){
-    cout << "Tu bedzie dokumentacja" << endl;
+    cout << "Matrix Lib\n"
+            "matrixLib [nazwa dzialania]\n"
+            "\t\n"
+            "Dzialania:\n"
+            "addMatrix\n"
+            "\tDodawanie dwoch macierzy.\n"
+            "subtractMatrix\n"
+            "\tOdejmowanie dwoch macierzy.\n"
+            "multiplyMatrix\n"
+            "\tMnozenie macierzy\n"
+            "myltiplyByScalar\n"
+            "\tMnozenie macierzy przez skalar.\n"
+            "transpozeMatrix\n"
+            "\tTransponowanie macierzy.\n"
+            "powerMatrix\n"
+            "\tPotegowanie macierzy.\n"
+            "determinantMatrix\n"
+            "\tZnajdowanie wyznacznika macierzy\n"
+            "sortRowsInMatrix\n"
+            "\tSortowanie wszystkich rzedow macierzy.\n"
+            "help\n"
+            "\tWyswietelenie dokumentacji" << endl;
 }
 
 void fillMatrix(int ** matrix, int rows, int cols){
@@ -281,4 +329,3 @@ void fillMatrix(int ** matrix, int rows, int cols){
 
 
 }
-void fillMatrix(double ** matrix, int rows, int cols);

@@ -131,6 +131,21 @@ int main(int argc, char *argv[]){
         deleteMatrix(array1, rows);
     }
 
+    else if (!strcmp(argv[1], "determinantMatrix")) {
+        int **array1, rows, cols;
+        cout << "Podaj wymiary macierzy w formie ([rows] [cols])" << endl;
+        cin >> rows >> cols;
+
+        array1 = createMatrix(array1, rows, cols);
+
+        cout << "Wypelnij macierz" << endl;
+        fillMatrix(array1, rows, cols);
+        printMatrix(array1, rows, cols);
+
+        cout << determinantMatrix(array1, rows, cols);
+        deleteMatrix(array1, rows);
+    }
+
     else if (!strcmp(argv[1], "matrixIsDiagonal")) {
         int **array1, rows, cols;
         cout << "Podaj wymiary macierzy w formie ([rows] [cols])" << endl;

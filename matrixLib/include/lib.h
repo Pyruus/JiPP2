@@ -6,6 +6,7 @@
 #define SIMPLECALC_LIB_H
 
 #include <iostream>
+#include <math.h>
 
 using namespace std;
 
@@ -21,7 +22,7 @@ int ** transpozeMatrix(int ** a, int rows, int cols);
 double ** transpozeMatrix(double ** a, int rows, int cols);
 int ** powerMatrix(int ** a, int rows, int cols, unsigned int power);
 double ** powerMatrix(double ** a, int rows, int cols, unsigned int power);
-int ** determinantMatrix(int ** a, int rows, int cols);
+int determinantMatrix(int ** a, int rows, int cols);
 bool matrixIsDiagonal(int ** a, int rows, int cols);
 void swap(int &a, int &b);
 void sortRow(int *tab , int cols);
