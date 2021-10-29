@@ -217,6 +217,35 @@ int determinantMatrix(int ** a, int rows, int cols){
     }
 }
 
+double determinantMatrix(double ** a, int rows, int cols){
+    double ** help;
+    help = createMatrix(help, cols, cols);
+    double det = 0;
+    if (rows == 1){
+        return a[0][0];
+    }
+    else if (rows == 2)
+        return ((a[0][0] * a[1][1]) - (a[1][0] * a[0][1]));
+    else {
+        for (int x = 0; x < rows; x++) {
+            int m = 0;
+            for (int i = 1; i < rows; i++) {
+                int n = 0;
+                for (int j = 0; j < rows; j++) {
+                    if (j == x) {
+                        continue;
+                    }
+                    help[m][n] = a[i][j];
+                    n++;
+                }
+                m++;
+            }
+            det = det + (pow(-1, x) * a[0][x] * determinantMatrix(help, rows - 1, cols));
+        }
+        return det;
+    }
+}
+
 bool matrixIsDiagonal(int ** a, int rows, int cols){
     if (rows != cols){
         return false;
@@ -234,13 +263,42 @@ bool matrixIsDiagonal(int ** a, int rows, int cols){
     return true;
 }
 
+bool matrixIsDiagonal(double ** a, int rows, int cols){
+    if (rows != cols){
+        return false;
+    }
+
+    for (int i = 0; i < rows; i++){
+        for (int j =  0; j < cols; j++){
+            if (i != j){
+                if (a[i][j] != 0){
+                    return false;
+                }
+            }
+        }
+    }
+    return true;
+}
 void swap(int &a, int &b){
     int tmp = a;
     a = b;
     b = tmp;
 }
 
+void swap(double &a, double &b){
+    double tmp = a;
+    a = b;
+    b = tmp;
+}
+
 void sortRow(int *tab , int cols){
+    for (int i = 0; i < cols-1; i++)
+        for (int j = 0; j < cols-i-1; j++)
+            if (tab[j] > tab[j+1])
+                swap(tab[j], tab[j+1]);
+}
+
+void sortRow(double *tab , int cols){
     for (int i = 0; i < cols-1; i++)
         for (int j = 0; j < cols-i-1; j++)
             if (tab[j] > tab[j+1])
@@ -253,7 +311,22 @@ void sortRowsInMatrix(int ** a, int rows, int cols){
     }
 }
 
+void sortRowsInMatrix(double ** a, int rows, int cols){
+    for (int i = 0; i < rows; i++){
+        sortRow(a[rows], cols);
+    }
+}
+
 void printMatrix(int ** matrix, int rows, int cols){
+    for(int i = 0; i < rows; i++){
+        for(int j = 0; j < cols; j++){
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+void printMatrix(double ** matrix, int rows, int cols){
     for(int i = 0; i < rows; i++){
         for(int j = 0; j < cols; j++){
             cout << matrix[i][j] << " ";
@@ -294,7 +367,7 @@ void deleteMatrix(double ** matrix, int rows){
 
 void help(){
     cout << "Matrix Lib\n"
-            "matrixLib [nazwa dzialania]\n"
+            "matrixLib [nazwa dzialania] [typ danych]\n"
             "\t\n"
             "Dzialania:\n"
             "addMatrix\n"
@@ -314,18 +387,34 @@ void help(){
             "sortRowsInMatrix\n"
             "\tSortowanie wszystkich rzedow macierzy.\n"
             "help\n"
-            "\tWyswietelenie dokumentacji" << endl;
+            "\tWyswietelenie dokumentacji"
+            "\n\nTypy danych:\n"
+            "int\n"
+            "\tOperacje wykonywane na liczbach calkowitych.\n"
+            "double\n"
+            "\tOperacje wykonywane na liczbach zmiennoprzecinkowych.\n"
+            "\n\nPo wybraniu dzialania oraz typu danych nalezy zgodnie z wyswietlanymi instrukcjami podac wymiary macierzy oraz wypelnic je\n" << endl;
 }
 
-void fillMatrix(int ** matrix, int rows, int cols){
+void fillMatrix(int ** matrix, int rows, int cols) {
     int val;
-    for (int i = 0; i < rows; i++){
-        cout << "Podaj wartosci " << i+1 << " rzedu odzielone spacjami" << endl;
-        for (int j = 0; j < cols; j++){
+    for (int i = 0; i < rows; i++) {
+        cout << "Podaj wartosci " << i + 1 << " rzedu odzielone spacjami" << endl;
+        for (int j = 0; j < cols; j++) {
             cin >> val;
             matrix[i][j] = val;
         }
     }
+}
 
+void fillMatrix(double ** matrix, int rows, int cols){
+        double val;
+        for (int i = 0; i < rows; i++){
+            cout << "Podaj wartosci " << i+1 << " rzedu odzielone spacjami" << endl;
+            for (int j = 0; j < cols; j++){
+                cin >> val;
+                matrix[i][j] = val;
+            }
+        }
 
 }
