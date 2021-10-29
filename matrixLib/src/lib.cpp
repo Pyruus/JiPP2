@@ -370,7 +370,7 @@ void deleteMatrix(double ** matrix, int rows){
 void fillMatrix(int ** matrix, int rows, int cols) {
     int val;
     for (int i = 0; i < rows; i++) {
-        cout << "Podaj wartosci " << i + 1 << " rzedu odzielone spacjami" << endl;
+        cout << "Podaj wartosci " << i + 1 << " wiersza odzielone spacjami" << endl;
         for (int j = 0; j < cols; j++) {
             cin >> val;
             matrix[i][j] = val;
@@ -381,7 +381,7 @@ void fillMatrix(int ** matrix, int rows, int cols) {
 void fillMatrix(double ** matrix, int rows, int cols){
         double val;
         for (int i = 0; i < rows; i++){
-            cout << "Podaj wartosci " << i+1 << " rzedu odzielone spacjami" << endl;
+            cout << "Podaj wartosci " << i+1 << " wiersza odzielone spacjami" << endl;
             for (int j = 0; j < cols; j++){
                 cin >> val;
                 matrix[i][j] = val;
@@ -410,7 +410,7 @@ void help(){
             "determinantMatrix\n"
             "\tZnajdowanie wyznacznika macierzy\n"
             "sortRowsInMatrix\n"
-            "\tSortowanie wszystkich rzedow macierzy.\n"
+            "\tSortowanie wszystkich wierszy macierzy.\n"
             "help\n"
             "\tWyswietelenie dokumentacji"
             "\n\nTypy danych:\n"
