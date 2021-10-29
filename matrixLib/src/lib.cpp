@@ -307,13 +307,13 @@ void sortRow(double *tab , int cols){
 
 void sortRowsInMatrix(int ** a, int rows, int cols){
     for (int i = 0; i < rows; i++){
-        sortRow(a[rows], cols);
+        sortRow(a[i], cols);
     }
 }
 
 void sortRowsInMatrix(double ** a, int rows, int cols){
     for (int i = 0; i < rows; i++){
-        sortRow(a[rows], cols);
+        sortRow(a[i], cols);
     }
 }
 
@@ -365,6 +365,31 @@ void deleteMatrix(double ** matrix, int rows){
     delete matrix;
 }
 
+
+
+void fillMatrix(int ** matrix, int rows, int cols) {
+    int val;
+    for (int i = 0; i < rows; i++) {
+        cout << "Podaj wartosci " << i + 1 << " rzedu odzielone spacjami" << endl;
+        for (int j = 0; j < cols; j++) {
+            cin >> val;
+            matrix[i][j] = val;
+        }
+    }
+}
+
+void fillMatrix(double ** matrix, int rows, int cols){
+        double val;
+        for (int i = 0; i < rows; i++){
+            cout << "Podaj wartosci " << i+1 << " rzedu odzielone spacjami" << endl;
+            for (int j = 0; j < cols; j++){
+                cin >> val;
+                matrix[i][j] = val;
+            }
+        }
+
+}
+
 void help(){
     cout << "Matrix Lib\n"
             "matrixLib [nazwa dzialania] [typ danych]\n"
@@ -394,27 +419,4 @@ void help(){
             "double\n"
             "\tOperacje wykonywane na liczbach zmiennoprzecinkowych.\n"
             "\n\nPo wybraniu dzialania oraz typu danych nalezy zgodnie z wyswietlanymi instrukcjami podac wymiary macierzy oraz wypelnic je\n" << endl;
-}
-
-void fillMatrix(int ** matrix, int rows, int cols) {
-    int val;
-    for (int i = 0; i < rows; i++) {
-        cout << "Podaj wartosci " << i + 1 << " rzedu odzielone spacjami" << endl;
-        for (int j = 0; j < cols; j++) {
-            cin >> val;
-            matrix[i][j] = val;
-        }
-    }
-}
-
-void fillMatrix(double ** matrix, int rows, int cols){
-        double val;
-        for (int i = 0; i < rows; i++){
-            cout << "Podaj wartosci " << i+1 << " rzedu odzielone spacjami" << endl;
-            for (int j = 0; j < cols; j++){
-                cin >> val;
-                matrix[i][j] = val;
-            }
-        }
-
 }

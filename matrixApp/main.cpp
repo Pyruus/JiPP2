@@ -19,23 +19,19 @@ int main(int argc, char *argv[]){
 
     // Operacje dla danych typu int
     else if (!strcmp(argv[2], "int")){
-
         if (!strcmp(argv[1], "addMatrix")) {
             int **matrix1, **matrix2, rows, cols;
             cout << "Podaj wymiary macierzy w formie ([rows] [cols])" << endl;
             cin >> rows >> cols;
-
 
             matrix1 = createMatrix(matrix1, rows, cols);
             matrix2 = createMatrix(matrix2, rows, cols);
 
             cout << "Wypelnij pierwsza macierz" << endl;
             fillMatrix(matrix1, rows, cols);
-            printMatrix(matrix1, rows, cols);
 
             cout << "Wypelnij druga macierz" << endl;
             fillMatrix(matrix2, rows, cols);
-            printMatrix(matrix2, rows, cols);
 
             printMatrix(addMatrix(matrix1, matrix2, rows, cols), rows, cols);
             deleteMatrix(matrix1, rows);
@@ -47,17 +43,14 @@ int main(int argc, char *argv[]){
             cout << "Podaj wymiary macierzy w formie ([rows] [cols])" << endl;
             cin >> rows >> cols;
 
-
             matrix1 = createMatrix(matrix1, rows, cols);
             matrix2 = createMatrix(matrix2, rows, cols);
 
             cout << "Wypelnij pierwsza macierz" << endl;
             fillMatrix(matrix1, rows, cols);
-            printMatrix(matrix1, rows, cols);
 
             cout << "Wypelnij druga macierz" << endl;
             fillMatrix(matrix2, rows, cols);
-            printMatrix(matrix2, rows, cols);
 
             printMatrix(subtractMatrix(matrix1, matrix2, rows, cols), rows, cols);
             deleteMatrix(matrix1, rows);
@@ -76,11 +69,9 @@ int main(int argc, char *argv[]){
 
             cout << "Wypelnij pierwsza macierz" << endl;
             fillMatrix(matrix1, a_rows, a_cols);
-            printMatrix(matrix1, a_rows, a_cols);
 
             cout << "Wypelnij druga macierz" << endl;
             fillMatrix(matrix2, b_rows, b_cols);
-            printMatrix(matrix2, b_rows, b_cols);
 
             printMatrix(multiplyMatrix(matrix1, matrix2, a_rows, a_cols, b_cols), a_rows, b_cols);
             deleteMatrix(matrix1, a_rows);
@@ -96,7 +87,6 @@ int main(int argc, char *argv[]){
 
             cout << "Wypelnij macierz" << endl;
             fillMatrix(matrix1, rows, cols);
-            printMatrix(matrix1, rows, cols);
 
             cout << "Podaj skalar" << endl;
             cin >> scalar;
@@ -114,7 +104,6 @@ int main(int argc, char *argv[]){
 
             cout << "Wypelnij macierz" << endl;
             fillMatrix(matrix1, rows, cols);
-            printMatrix(matrix1, rows, cols);
 
             printMatrix(transpozeMatrix(matrix1, rows, cols), rows, cols);
             deleteMatrix(matrix1, rows);
@@ -130,7 +119,6 @@ int main(int argc, char *argv[]){
 
             cout << "Wypelnij macierz" << endl;
             fillMatrix(matrix1, rows, cols);
-            printMatrix(matrix1, rows, cols);
 
             cout << "Podaj potege" << endl;
             cin >> power;
@@ -148,7 +136,6 @@ int main(int argc, char *argv[]){
 
             cout << "Wypelnij macierz" << endl;
             fillMatrix(matrix1, rows, cols);
-            printMatrix(matrix1, rows, cols);
 
             cout << determinantMatrix(matrix1, rows, cols);
             deleteMatrix(matrix1, rows);
@@ -163,7 +150,6 @@ int main(int argc, char *argv[]){
 
             cout << "Wypelnij macierz" << endl;
             fillMatrix(matrix1, rows, cols);
-            printMatrix(matrix1, rows, cols);
 
             if (matrixIsDiagonal(matrix1, rows, cols)){
                 cout << "Macierz jest diagonalna" << endl;
@@ -185,7 +171,6 @@ int main(int argc, char *argv[]){
 
             cout << "Wypelnij macierz" << endl;
             fillMatrix(matrix1, rows, cols);
-
             sortRowsInMatrix(matrix1, rows, cols);
             printMatrix(matrix1, rows, cols);
             deleteMatrix(matrix1, rows);
@@ -217,11 +202,9 @@ int main(int argc, char *argv[]){
 
             cout << "Wypelnij pierwsza macierz" << endl;
             fillMatrix(matrix1, rows, cols);
-            printMatrix(matrix1, rows, cols);
 
             cout << "Wypelnij druga macierz" << endl;
             fillMatrix(matrix2, rows, cols);
-            printMatrix(matrix2, rows, cols);
 
             printMatrix(addMatrix(matrix1, matrix2, rows, cols), rows, cols);
             deleteMatrix(matrix1, rows);
@@ -240,7 +223,6 @@ int main(int argc, char *argv[]){
 
             cout << "Wypelnij pierwsza macierz" << endl;
             fillMatrix(matrix1, rows, cols);
-            printMatrix(matrix1, rows, cols);
 
             cout << "Wypelnij druga macierz" << endl;
             fillMatrix(matrix2, rows, cols);
@@ -285,7 +267,6 @@ int main(int argc, char *argv[]){
 
             cout << "Wypelnij macierz" << endl;
             fillMatrix(matrix1, rows, cols);
-            printMatrix(matrix1, rows, cols);
 
             cout << "Podaj skalar" << endl;
             cin >> scalar;
@@ -304,7 +285,6 @@ int main(int argc, char *argv[]){
 
             cout << "Wypelnij macierz" << endl;
             fillMatrix(matrix1, rows, cols);
-            printMatrix(matrix1, rows, cols);
 
             printMatrix(transpozeMatrix(matrix1, rows, cols), rows, cols);
             deleteMatrix(matrix1, rows);
@@ -321,7 +301,6 @@ int main(int argc, char *argv[]){
 
             cout << "Wypelnij macierz" << endl;
             fillMatrix(matrix1, rows, cols);
-            printMatrix(matrix1, rows, cols);
 
             cout << "Podaj potege" << endl;
             cin >> power;
@@ -340,7 +319,6 @@ int main(int argc, char *argv[]){
 
             cout << "Wypelnij macierz" << endl;
             fillMatrix(matrix1, rows, cols);
-            printMatrix(matrix1, rows, cols);
 
             cout << determinantMatrix(matrix1, rows, cols);
             deleteMatrix(matrix1, rows);
@@ -356,7 +334,6 @@ int main(int argc, char *argv[]){
 
             cout << "Wypelnij macierz" << endl;
             fillMatrix(matrix1, rows, cols);
-            printMatrix(matrix1, rows, cols);
 
             if (matrixIsDiagonal(matrix1, rows, cols)){
                 cout << "Macierz jest diagonalna" << endl;

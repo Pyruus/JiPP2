@@ -2,8 +2,8 @@
 // Created by Pyrus on 19.10.2021.
 //
 
-#ifndef SIMPLECALC_LIB_H
-#define SIMPLECALC_LIB_H
+#ifndef MATRIXLIB_LIB_H
+#define MATRIXLIB_LIB_H
 
 #include <iostream>
 #include <math.h>
@@ -42,4 +42,4 @@ void fillMatrix(int ** matrix, int rows, int cols);
 void fillMatrix(double ** matrix, int rows, int cols);
 void help();
 
-#endif //SIMPLECALC_LIB_H
+#endif //MATRIXLIB_LIB_H
