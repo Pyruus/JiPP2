@@ -169,9 +169,16 @@ int ** powerMatrix(int ** a, int rows, int cols, unsigned int power){
         result[i] = new int [cols];
     }
 
+    result = multiplyMatrix(a, a, rows, cols, cols);
+    for(int i = 2; i < power; i++){
+        result = multiplyMatrix(result, a, rows, cols, cols);
+    }
+    /*
     for(int i = 0; i < power; i++){
         result = multiplyMatrix(a, a, rows, cols, cols);
     }
+     */
+
     return result;
 }
 
