@@ -14,6 +14,8 @@ protected:
 
 public:
     void showCards();
+
+    void printCards();
 };
 
 

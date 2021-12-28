@@ -3,20 +3,34 @@
 //
 
 #include <iostream>
-#include "Deck.h"
+#include "Game.h"
 
 using namespace std;
 
 int main(){
-    Deck deck = Deck();
-    cout << deck.getAmount() << endl;
-    Card drawn = deck.drawCard();
-    deck.fillDeck();
-    cout << deck.getAmount() << endl;
-    cout << drawn.getName() << " " << drawn.getSuit() << endl;
-    deck.shuffleDeck();
-    drawn = deck.drawCard();
-    cout << deck.getAmount() << endl;
-    cout << drawn.getName() << " " << drawn.getSuit() << endl;
+    Game game = Game();
+    bool running = true;
+    while (running){
+        int choice;
+        cout << "What would you like to do?" << endl;
+        cout << "1 - play round" << endl;
+        cout << "2 - close game" << endl;
+        cin >> choice;
+
+        switch (choice){
+            case 1:
+                game.runGame();
+                break;
+
+            case 2:
+                running = false;
+                break;
+
+            default:
+                cout << "Wrong argument" << endl;
+                break;
+        }
+
+    }
     return 0;
 }

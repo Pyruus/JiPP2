@@ -12,13 +12,22 @@ protected:
     Card *hand;
     int value = 0;
     int cards = 0;
+    int aces = 0;
 
 public:
     Player();
 
     ~Player();
 
-    void drawCard(Deck deck);
+    void drawCard(Deck *deck);
+
+    virtual void printCards();
+
+    virtual void showCards();
+
+    void setValue();
+
+    int getValue();
 };
 
 

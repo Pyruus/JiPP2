@@ -25,6 +25,10 @@ public:
     int getValue() const;
 
     string getName() const;
+
+    void printCard() const;
+
+    void setValue(int val);
 };
 
 

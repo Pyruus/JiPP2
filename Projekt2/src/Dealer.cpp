@@ -7,3 +7,13 @@
 void Dealer::showCards() {
     cards_hidden = false;
 }
+
+void Dealer::printCards() {
+    if (!cards_hidden){
+        Player::printCards();
+    }
+    else{
+        hand[0].printCard();
+        cout << "[hidden]" << endl;
+    }
+}

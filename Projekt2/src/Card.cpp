@@ -19,3 +19,11 @@ int Card::getValue() const{
 string Card::getName() const{
     return name;
 }
+
+void Card::printCard() const{
+    cout << getSuit() << " " << getName() << endl;
+}
+
+void Card::setValue(int val) {
+    this->value = val;
+}
