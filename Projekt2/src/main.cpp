@@ -11,6 +11,7 @@ int main(){
     Game game = Game();
     bool running = true;
     while (running){
+        system("clear");
         int choice;
         cout << "What would you like to do?" << endl;
         cout << "1 - play round" << endl;
