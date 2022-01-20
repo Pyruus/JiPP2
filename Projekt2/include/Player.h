@@ -9,13 +9,14 @@
 
 class Player {
 protected:
+    string name;
     Card *hand;
     int value = 0;
     int cards = 0;
     int aces = 0;
 
 public:
-    Player();
+    Player(string name);
 
     ~Player();
 
@@ -28,6 +29,10 @@ public:
     void setValue();
 
     int getValue();
+
+    void setName(string name);
+
+    string getName();
 };
 
 

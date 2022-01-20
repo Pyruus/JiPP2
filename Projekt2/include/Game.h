@@ -8,9 +8,10 @@
 #include "Player.h"
 #include "Dealer.h"
 
+
 class Game {
 public:
-    void runGame();
+    void runGame(string name);
 };
 
 

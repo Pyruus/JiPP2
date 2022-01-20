@@ -13,6 +13,8 @@ protected:
     bool cards_hidden = true;
 
 public:
+    Dealer(string name);
+
     void showCards();
 
     void printCards();

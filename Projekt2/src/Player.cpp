@@ -4,7 +4,7 @@
 
 #include "../include/Player.h"
 
-Player::Player() {
+Player::Player(string name) : name(name){
     hand = new Card[10];
 }
 
@@ -50,4 +50,12 @@ int Player::getValue() {
 
 void Player::showCards() {
 
+}
+
+void Player::setName(string name) {
+    this->name = name;
+}
+
+string Player::getName() {
+    return name;
 }

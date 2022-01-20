@@ -4,28 +4,29 @@
 
 #include "Game.h"
 
-void Game::runGame() {
+void Game::runGame(string name) {
     //setup
     bool player_phase = true;
     bool busted = false;
     Deck deck = Deck();
     deck.shuffleDeck();
-    Player *player = new Player;
-    Player *dealer = new Dealer;
+    Player *player = new Player(name);
+    Player *dealer = new Dealer("Dealer");
     player->drawCard(&deck);
     player->drawCard(&deck);
     dealer->drawCard(&deck);
     dealer->drawCard(&deck);
     //game
     while (player_phase){
+        system("clear");
         cout << "Dealer's cards: " << endl;
         dealer->printCards();
-        cout << "Your cards: " << endl;
+        cout << player->getName() << "'s cards: " << endl;
         player->printCards();
         cout << "Value: " << player->getValue() << endl;
         int choice = 0;
         while (choice == 0) {
-            cout << "What would you like to do? (1 - draw 2 - pass)" << endl;
+            cout << endl << "What would you like to do? (1 - draw 2 - pass)" << endl;
             cin >> choice;
             switch (choice) {
                 case 1:
@@ -46,7 +47,7 @@ void Game::runGame() {
             }
         }
     }
-
+    system("clear");
     dealer->showCards();
     if(!busted) {
         while (dealer->getValue() < 17) {
@@ -56,9 +57,9 @@ void Game::runGame() {
         cout << "Dealer's cards: " << endl;
         dealer->printCards();
         cout << "Dealer's value: " << dealer->getValue() << endl;
-        cout << "Your cards: " << endl;
+        cout << player->getName() << "'s cards: " << endl;
         player->printCards();
-        cout << "Your value: " << player->getValue() << endl;
+        cout << player->getName() << "'s value: " << player->getValue() << endl;
 
         if (player->getValue() > dealer->getValue() || dealer->getValue() > 21) {
             cout << "You won!" << endl;
@@ -74,9 +75,9 @@ void Game::runGame() {
         cout << "Dealer's cards: " << endl;
         dealer->printCards();
         cout << "Dealer's value: " << dealer->getValue() << endl;
-        cout << "Your cards: " << endl;
+        cout << player->getName() << "'s cards: " << endl;
         player->printCards();
-        cout << "Your value: " << player->getValue() << endl;
+        cout << player->getName() << "'s value: " << player->getValue() << endl;
         cout << "Busted! You lost." << endl;
     }
 }

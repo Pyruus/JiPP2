@@ -7,20 +7,25 @@
 
 using namespace std;
 
-int main(){
+int main(int argc, char *argv[]){
     Game game = Game();
     bool running = true;
     while (running){
-        system("clear");
         int choice;
         cout << "What would you like to do?" << endl;
         cout << "1 - play round" << endl;
         cout << "2 - close game" << endl;
         cin >> choice;
+        system("clear");
 
         switch (choice){
             case 1:
-                game.runGame();
+                if (argc == 2){
+                    game.runGame((argv[1]));
+                }
+                else {
+                    game.runGame("Player");
+                }
                 break;
 
             case 2:

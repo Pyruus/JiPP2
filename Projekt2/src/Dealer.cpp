@@ -17,3 +17,6 @@ void Dealer::printCards() {
         cout << "[hidden]" << endl;
     }
 }
+
+Dealer::Dealer(string name) : Player(name) {
+}
