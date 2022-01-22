@@ -5,7 +5,8 @@
 #include "Game.h"
 
 void Game::runGame(string name) {
-    //setup
+    //SETUP
+    int stake;
     bool player_phase = true;
     bool busted = false;
     Deck deck = Deck();
@@ -16,7 +17,21 @@ void Game::runGame(string name) {
     player->drawCard(&deck);
     dealer->drawCard(&deck);
     dealer->drawCard(&deck);
-    //game
+    //BETTING
+    cout << "How many chips would you like to bet?" << endl;
+    cin >> stake;
+    while (stake <= 0 || stake > getChips()){
+        cout << "Amount has to be higher than 0 and not higher than your current amount!" << endl;
+        cout << "Your current amount: " << getChips() <<endl;
+        cout << "How many chips would you like to bet?" << endl;
+        cin >> stake;
+    }
+    while (stake > getChips()){
+        cout << "Amount has to be higher than 0! How many chips would you like to bet?" << endl;
+        cin >> stake;
+    }
+
+    //GAME
     while (player_phase){
         system("clear");
         cout << "Dealer's cards: " << endl;
@@ -64,11 +79,13 @@ void Game::runGame(string name) {
 
         if (player->getValue() > dealer->getValue() || dealer->getValue() > 21) {
             cout << "You won!" << endl;
+            changeChips(stake);
         } else if (player->getValue() == dealer->getValue()){
             cout << "Draw." << endl;
         }
         else{
             cout << "You lost!" << endl;
+            changeChips(-stake);
         }
     }
 
@@ -80,7 +97,25 @@ void Game::runGame(string name) {
         player->printCards();
         cout << player->getName() << "'s value: " << player->getValue() << endl;
         cout << "Busted! You lost." << endl;
+        changeChips(-stake);
     }
 }
+
+Game::Game() {
+    this->chips = 100;
+}
+
+void Game::setChips(int chips) {
+    this->chips = chips;
+}
+
+int Game::getChips() {
+    return chips;
+}
+
+void Game::changeChips(int change){
+    chips += change;
+}
+
 
 

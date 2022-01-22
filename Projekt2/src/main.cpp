@@ -12,7 +12,12 @@ int main(int argc, char *argv[]){
     bool running = true;
     while (running){
         int choice;
-        cout << endl << endl;
+        if (game.getChips() <= 0){
+            cout << "You've lost all your chips! Try again by starting a new game.\n" << endl;
+            running = false;
+            break;
+        }
+        cout << endl << "Your chips amount: " << game.getChips() << endl;
         cout << "What would you like to do?" << endl;
         cout << "1 - play round" << endl;
         cout << "2 - close game" << endl;
