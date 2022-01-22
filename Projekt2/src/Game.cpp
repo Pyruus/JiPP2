@@ -21,6 +21,7 @@ void Game::runGame(string name) {
         system("clear");
         cout << "Dealer's cards: " << endl;
         dealer->printCards();
+        cout << endl;
         cout << player->getName() << "'s cards: " << endl;
         player->printCards();
         cout << "Value: " << player->getValue() << endl;
@@ -56,7 +57,7 @@ void Game::runGame(string name) {
 
         cout << "Dealer's cards: " << endl;
         dealer->printCards();
-        cout << "Dealer's value: " << dealer->getValue() << endl;
+        cout << "Dealer's value: " << dealer->getValue() << endl << endl;
         cout << player->getName() << "'s cards: " << endl;
         player->printCards();
         cout << player->getName() << "'s value: " << player->getValue() << endl;
@@ -74,7 +75,7 @@ void Game::runGame(string name) {
     else{
         cout << "Dealer's cards: " << endl;
         dealer->printCards();
-        cout << "Dealer's value: " << dealer->getValue() << endl;
+        cout << "Dealer's value: " << dealer->getValue() << endl << endl;
         cout << player->getName() << "'s cards: " << endl;
         player->printCards();
         cout << player->getName() << "'s value: " << player->getValue() << endl;

@@ -21,7 +21,21 @@ string Card::getName() const{
 }
 
 void Card::printCard() const{
-    cout << getSuit() << " " << getName() << endl;
+
+    if (getSuit() == "hearts"){
+        cout << "\x1B[31m" << getSuit() << "\033[0m" << " " << getName() << endl;
+    }
+    else if( getSuit() == "diamonds"){
+        cout << "\x1B[91m" << getSuit() << "\033[0m" << " " << getName() << endl;
+    }
+
+    else if( getSuit() == "spades"){
+        cout << "\x1B[90m" << getSuit() << "\033[0m" << " " << getName() << endl;
+    }
+    else{
+        cout << "\u001b[38;5;243m\"" << getSuit() << "\033[0m" << " " << getName() << endl;
+    }
+
 }
 
 void Card::setValue(int val) {

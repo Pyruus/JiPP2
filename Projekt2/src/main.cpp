@@ -12,6 +12,7 @@ int main(int argc, char *argv[]){
     bool running = true;
     while (running){
         int choice;
+        cout << endl << endl;
         cout << "What would you like to do?" << endl;
         cout << "1 - play round" << endl;
         cout << "2 - close game" << endl;
