@@ -8,7 +8,7 @@
 using namespace std;
 
 int main(int argc, char *argv[]){
-    Game game = Game();
+    Game game;
     bool running = true;
     while (running){
         int choice;
@@ -22,9 +22,13 @@ int main(int argc, char *argv[]){
         cout << "1 - play round" << endl;
         cout << "2 - close game" << endl;
         cin >> choice;
-        system("clear");
+        #ifdef _WIN32
+            system("cls");
+        #else
+            system("clear");
+        #endif
 
-        switch (choice){
+        switch(choice){
             case 1:
                 if (argc == 2){
                     game.runGame((argv[1]));

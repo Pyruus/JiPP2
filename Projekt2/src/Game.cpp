@@ -33,7 +33,11 @@ void Game::runGame(string name) {
 
     //GAME
     while (player_phase){
-        system("clear");
+        #ifdef _WIN32
+                system("cls");
+        #else
+                system("clear");
+        #endif
         cout << "Dealer's cards: " << endl;
         dealer->printCards();
         cout << endl;
