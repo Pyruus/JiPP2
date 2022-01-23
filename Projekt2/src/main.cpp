@@ -8,7 +8,14 @@
 using namespace std;
 
 int main(int argc, char *argv[]){
-    Game game;
+    string name;
+    if (argc == 2){
+        name = argv[1];
+    }
+    else {
+        name = "Player";
+    }
+    Game game(name);
     bool running = true;
     while (running){
         int choice;

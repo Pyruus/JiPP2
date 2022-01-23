@@ -29,6 +29,8 @@ public:
     void printCard() const;
 
     void setValue(int val);
+
+    int operator+(const Card& rhs) const;
 };
 
 

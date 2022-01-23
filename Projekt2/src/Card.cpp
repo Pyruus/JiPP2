@@ -41,3 +41,7 @@ void Card::printCard() const{
 void Card::setValue(int val) {
     this->value = val;
 }
+
+int Card::operator+(const Card& rhs) const {
+    return value + rhs.value;
+}

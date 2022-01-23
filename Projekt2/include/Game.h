@@ -12,8 +12,13 @@
 class Game {
 protected:
     int chips;
+    string player_name;
 public:
     Game();
+
+    Game(string name);
+
+    ~Game();
 
     void setChips(int chips);
 

@@ -105,7 +105,36 @@ void Game::runGame(string name) {
     }
 }
 
+Game::Game(string name) {
+    fstream input("../src/save.txt");
+    bool used = false;
+    player_name = name;
+    if(input.is_open()) {
+        string line;
+        vector <string> arguments;
+        while (!input.eof()) {
+            getline(input, line);
+            stringstream ss(line);
+            string word;
+            while (ss >> word) {
+                arguments.push_back(word);
+            }
+            if (arguments.at(0) ==  player_name){
+
+                this->chips = stoi(arguments.at(1));
+                used = true;
+            }
+            arguments.clear();
+        }
+        input.close();
+    }
+    if (!used){
+        this->chips = 100;
+    }
+}
+
 Game::Game() {
+    player_name = "Player";
     this->chips = 100;
 }
 
@@ -119,6 +148,14 @@ int Game::getChips() {
 
 void Game::changeChips(int change){
     chips += change;
+}
+
+Game::~Game() {
+    if (player_name != "Player"){
+        ofstream output("../src/save.txt", ios::app);
+        output << endl << player_name << " " << chips;
+        output.close();
+    }
 }
 
 
