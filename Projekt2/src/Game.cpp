@@ -67,7 +67,11 @@ void Game::runGame(string name) {
             }
         }
     }
-    system("clear");
+    #ifdef _WIN32
+        system("cls");
+    #else
+        system("clear");
+    #endif
     dealer->showCards();
     if(!busted) {
         while (dealer->getValue() < 17) {
@@ -106,7 +110,8 @@ void Game::runGame(string name) {
 }
 
 Game::Game(string name) {
-    fstream input("../src/save.txt");
+    ifstream input("../src/save.txt");
+    bool first_output = true;
     bool used = false;
     player_name = name;
     if(input.is_open()) {
@@ -123,6 +128,19 @@ Game::Game(string name) {
 
                 this->chips = stoi(arguments.at(1));
                 used = true;
+            }
+            else{
+                if (first_output){
+                    ofstream output("../src/save.txt");
+                    output << arguments.at(0) << " " << arguments.at(1);
+                    output.close();
+                    first_output = false;
+                }
+                else{
+                    ofstream output("../src/save.txt", ios::app);
+                    output << arguments.at(0) << " " << arguments.at(1);
+                    output.close();
+                }
             }
             arguments.clear();
         }

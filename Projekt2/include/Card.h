@@ -31,6 +31,8 @@ public:
     void setValue(int val);
 
     int operator+(const Card& rhs) const;
+
+    int operator+(int rhs) const;
 };
 
 

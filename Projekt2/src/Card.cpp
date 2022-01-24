@@ -45,3 +45,7 @@ void Card::setValue(int val) {
 int Card::operator+(const Card& rhs) const {
     return value + rhs.value;
 }
+
+int Card::operator+(int rhs) const {
+    return value + rhs;
+}

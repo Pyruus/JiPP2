@@ -30,7 +30,7 @@ void Player::printCards() {
 void Player::setValue() {
     value = 0;
     for (int i = 0; i < cards; i++){
-        value += hand[i].getValue();
+        value = hand[i] + value;
     }
     if (value > 21 && aces > 0){
         for (int i = 0; i < cards; i++){
