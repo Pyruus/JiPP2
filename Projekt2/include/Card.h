@@ -20,14 +20,33 @@ public:
 
     Card(string suit, int value, string name);
 
-    string getSuit() const;
+     /**
+      * Getter returning suit of a card
+      * @return suit variable
+      */
+     string getSuit() const;
 
+    /**
+     * Getter returning value of a card
+     * @return value variable
+     */
     int getValue() const;
 
+    /**
+     * Getter returning name of a card
+     * @return value variable
+     */
     string getName() const;
 
+    /**
+     * Method printing all card's properties
+     */
     void printCard() const;
 
+    /**
+     * Method setting value of a card
+     * @param val new value
+     */
     void setValue(int val);
 
     int operator+(const Card& rhs) const;

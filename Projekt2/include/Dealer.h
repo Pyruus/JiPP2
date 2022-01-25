@@ -15,8 +15,14 @@ protected:
 public:
     Dealer(string name);
 
+    /**
+     * Method setting variable cards_hidden to false
+     */
     void showCards();
 
+    /**
+     * Method responsible for printing all dealer's cards
+     */
     void printCards();
 };
 

@@ -20,12 +20,28 @@ public:
 
     ~Game();
 
+    /**
+     * Method setting chips variable
+     * @param chips new chips variable value
+     */
     void setChips(int chips);
 
+    /**
+     * Getter returning amount of player's chips
+     * @return chips variable
+     */
     int getChips();
 
+    /**
+     * Method adding or subtracting amount of chips
+     * @param change number of chips to add
+     */
     void changeChips(int change);
 
+    /**
+     * Method responsible for setting up the game
+     * @param name player's name
+     */
     void runGame(string name);
 };
 #endif //PROJECT_2_GAME_H
