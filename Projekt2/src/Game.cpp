@@ -138,7 +138,7 @@ Game::Game(string name) {
                 }
                 else{
                     ofstream output("../src/save.txt", ios::app);
-                    output << arguments.at(0) << " " << arguments.at(1);
+                    output << endl << arguments.at(0) << " " << arguments.at(1);
                     output.close();
                 }
             }
