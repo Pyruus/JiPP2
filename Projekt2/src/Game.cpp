@@ -146,7 +146,7 @@ Game::Game(string name) {
         }
         input.close();
     }
-    if (!used){
+    if (!used || chips == 0){
         this->chips = 100;
     }
 }

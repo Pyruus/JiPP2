@@ -33,7 +33,7 @@ void Card::printCard() const{
         cout << "\x1B[90m" << getSuit() << "\033[0m" << " " << getName() << endl;
     }
     else{
-        cout << "\u001b[38;5;243m\"" << getSuit() << "\033[0m" << " " << getName() << endl;
+        cout << "\u001b[38;5;243m" << getSuit() << "\033[0m" << " " << getName() << endl;
     }
 
 }
