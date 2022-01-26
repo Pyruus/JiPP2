@@ -2,8 +2,8 @@
 // Created by Pyrus on 25.12.2021.
 //
 
-#ifndef LAB9_PLAYER_H
-#define LAB9_PLAYER_H
+#ifndef BLACKJACK_PLAYER_H
+#define BLACKJACK_PLAYER_H
 
 #include "Deck.h"
 
@@ -61,4 +61,4 @@ public:
 };
 
 
-#endif //LAB9_PLAYER_H
+#endif //BLACKJACK_PLAYER_H

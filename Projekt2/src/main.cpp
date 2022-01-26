@@ -12,8 +12,12 @@ int main(int argc, char *argv[]){
     if (argc == 2){
         name = argv[1];
     }
-    else {
+    else if (argc ==1){
         name = "Player";
+    }
+    else{
+        cout << "Wrong amount of arguments, enter player's name as the only argument" << endl;\
+        return 0;
     }
     Game game(name);
     bool running = true;

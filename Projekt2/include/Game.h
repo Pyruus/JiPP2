@@ -2,8 +2,8 @@
 // Created by Pyrus on 27.12.2021.
 //
 
-#ifndef PROJECT_2_GAME_H
-#define PROJECT_2_GAME_H
+#ifndef BLACKJACK_GAME_H
+#define BLACKJACK_GAME_H
 #include "Deck.h"
 #include "Player.h"
 #include "Dealer.h"
@@ -44,4 +44,4 @@ public:
      */
     void runGame(string name);
 };
-#endif //PROJECT_2_GAME_H
+#endif //BLACKJACK_GAME_H

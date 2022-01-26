@@ -2,8 +2,8 @@
 // Created by Pyrus on 21.12.2021.
 //
 
-#ifndef LAB9_DECK_H
-#define LAB9_DECK_H
+#ifndef BLACKJACK_DECK_H
+#define BLACKJACK_DECK_H
 
 #include "Card.h"
 #include <fstream>
@@ -56,4 +56,4 @@ public:
 };
 
 
-#endif //LAB9_DECK_H
+#endif //BLACKJACK_DECK_H
