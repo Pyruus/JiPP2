@@ -49,6 +49,18 @@ public:
      */
     void setValue(int val);
 
+    /**
+     * Method setting suit of a card
+     * @param val new suit
+     */
+    void setSuit(string suit);
+
+    /**
+     * Method setting name of a card
+     * @param val new name
+     */
+    void setName(string name);
+
     int operator+(const Card& rhs) const;
 
     int operator+(int rhs) const;

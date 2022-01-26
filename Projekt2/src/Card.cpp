@@ -49,3 +49,11 @@ int Card::operator+(const Card& rhs) const {
 int Card::operator+(int rhs) const {
     return value + rhs;
 }
+
+void Card::setSuit(string suit) {
+    this->suit = suit;
+}
+
+void Card::setName(string name) {
+    this->name = name;
+}

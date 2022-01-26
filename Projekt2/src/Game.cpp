@@ -4,6 +4,7 @@
 
 #include "Game.h"
 
+
 void Game::runGame(string name) {
     //SETUP
     int stake;
